@@ -27,6 +27,27 @@
     <Filter Include="io">
       <UniqueIdentifier>{f9b26fbf-b1d7-40e0-80a1-850b7ca7052b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="filter">
+      <UniqueIdentifier>{791b186a-b847-4e33-ba4d-d52266a523fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{22f99e90-47f0-4994-b544-f95f1729ae9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_translator.cpp">
@@ -46,6 +67,36 @@
       <Filter>io</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="GeneratedFiles\Debug\moc_projectsettingdlg.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_projectsettingdlg.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\projectsettingdlg.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_newprojectdlg.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_newprojectdlg.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\newprojectdlg.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="core\TransProject.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ProjectWriter.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ProjectReader.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ProjectIOAdapter.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="translator.qrc">
@@ -57,12 +108,48 @@
     <CustomBuild Include="dialog\translator.ui">
       <Filter>dialog</Filter>
     </CustomBuild>
+    <CustomBuild Include="dialog\projectsettingdlg.h">
+      <Filter>dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog\projectsettingdlg.ui">
+      <Filter>dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog\newprojectdlg.ui">
+      <Filter>dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog\newprojectdlg.h">
+      <Filter>dialog</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="io\tmxReader.h">
       <Filter>io</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="GeneratedFiles\ui_projectsettingdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_translator.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_newprojectdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\TransProject.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ProjectWriter.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\tmxbase.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ProjectReader.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ProjectIOAdapter.h">
+      <Filter>io</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Packages\Debugger\Visualizers\qt5.natvis" />

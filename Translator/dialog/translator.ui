@@ -23,7 +23,7 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>&amp;Project</string>
     </property>
@@ -38,8 +38,6 @@
     <addaction name="separator"/>
     <addaction name="actionReleaseCur"/>
     <addaction name="actionReleaseAll"/>
-    <addaction name="separator"/>
-    <addaction name="actionSetting"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
@@ -57,8 +55,9 @@
     <property name="title">
      <string>&amp;Option</string>
     </property>
+    <addaction name="actionSetting"/>
    </widget>
-   <addaction name="menu_File"/>
+   <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
    <addaction name="menu_View"/>
    <addaction name="menu_Option"/>
@@ -76,10 +75,16 @@
    <property name="text">
     <string>&amp;New Project</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
   <action name="actionOpen">
    <property name="text">
     <string>&amp;Open Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionRecent">
@@ -89,35 +94,56 @@
   </action>
   <action name="actionOpenGit">
    <property name="text">
-    <string>Open Git Project</string>
+    <string>Creckout &amp;Git Project</string>
    </property>
   </action>
   <action name="actionReload">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Reload Project</string>
+    <string>&amp;Reload Project</string>
    </property>
   </action>
   <action name="actionClose">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Close Project</string>
+    <string>&amp;Close Project</string>
    </property>
   </action>
   <action name="actionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="actionReleaseCur">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Release Current</string>
    </property>
   </action>
   <action name="actionReleaseAll">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Release All</string>
    </property>
   </action>
   <action name="actionSetting">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Project Setting</string>
    </property>
@@ -130,7 +156,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="translator.qrc"/>
+  <include location="../translator.qrc"/>
  </resources>
  <connections/>
 </ui>

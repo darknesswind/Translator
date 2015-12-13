@@ -17,7 +17,7 @@ void TmxReader::readTmx(QString sPath)
 {
 	QFile tmxFile(sPath);
 	if (!tmxFile.open(QFile::ReadOnly))
-		QMessageBox::warning(nullptr, QSTR_Error, QSTR_OpenFailed.arg(sPath));
+		QMessageBox::warning(nullptr, QSTR_Error, QSTR_Err_OpenFailed.arg(sPath));
 
 	QXmlStreamReader xml(&tmxFile);
 
