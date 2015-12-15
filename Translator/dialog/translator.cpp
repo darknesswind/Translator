@@ -2,7 +2,9 @@
 #include "translator.h"
 #include "newprojectdlg.h"
 #include "projectsettingdlg.h"
+
 #include "core/transProject.h"
+#include "filter/FileFilterBase.h"
 #include <QFileDialog>
 
 Translator::Translator(QWidget *parent)
@@ -11,6 +13,10 @@ Translator::Translator(QWidget *parent)
 	ui.setupUi(this);
 
 	initMenu();
+
+	connect(this, &Translator::projectLoaded, ui.projFileWidget, &ProjFileWidget::onProjectLoaded);
+
+	FileFilterBase::InitBuildInFilter();
 }
 
 Translator::~Translator()
@@ -24,6 +30,9 @@ void Translator::initMenu()
 	connect(ui.actionNew, &QAction::triggered, this, &Translator::onActionNew);
 	connect(ui.actionOpen, &QAction::triggered, this, &Translator::onActionOpen);
 
+	connect(ui.actionProjectFile, &QAction::toggled, this, &Translator::onActProjectFileView);
+	connect(ui.dockProjFile, &QDockWidget::visibilityChanged, ui.actionProjectFile, &QAction::setChecked);
+
 }
 
 void Translator::onProjectLoaded()
@@ -33,6 +42,10 @@ void Translator::onProjectLoaded()
 
 	setWindowTitle(m_spProject->projectName());
 	updateProjectMenu();
+	m_spProject->refreshFilter();
+	m_spProject->refreshSource();
+	ui.projFileWidget->setProject(m_spProject.get());
+	emit projectLoaded();
 }
 
 void Translator::updateProjectMenu()
@@ -68,8 +81,8 @@ void Translator::onActionOpen()
 	QString file = QFileDialog::getOpenFileName(
 		this,
 		tr("Open Project"),
-		QDir::current().path(),
-		QSTR_ProjectExt);
+		QString::fromUtf16((ushort*)L"D:/Develop/GitHub/幻想人形演舞外伝/"),//QDir::current().path(),
+		"*.trproj");
 
 	m_spProject = std::make_unique<TransProject>();
 	if (!m_spProject->open(file))
@@ -78,6 +91,11 @@ void Translator::onActionOpen()
 		return;
 	}
 	onProjectLoaded();
+}
+
+void Translator::onActProjectFileView(bool bVisible)
+{
+	ui.dockProjFile->setVisible(bVisible);
 }
 
 #pragma endregion

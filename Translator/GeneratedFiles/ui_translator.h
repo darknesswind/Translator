@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDockWidget>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "projfilewidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -37,6 +39,7 @@ public:
     QAction *actionReleaseAll;
     QAction *actionSetting;
     QAction *actionQuit;
+    QAction *actionProjectFile;
     QWidget *centralWidget;
     QMenuBar *menuBar;
     QMenu *menuFile;
@@ -45,12 +48,14 @@ public:
     QMenu *menu_Option;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QDockWidget *dockProjFile;
+    ProjFileWidget *projFileWidget;
 
     void setupUi(QMainWindow *TranslatorClass)
     {
         if (TranslatorClass->objectName().isEmpty())
             TranslatorClass->setObjectName(QStringLiteral("TranslatorClass"));
-        TranslatorClass->resize(600, 400);
+        TranslatorClass->resize(843, 494);
         actionNew = new QAction(TranslatorClass);
         actionNew->setObjectName(QStringLiteral("actionNew"));
         actionOpen = new QAction(TranslatorClass);
@@ -79,12 +84,16 @@ public:
         actionSetting->setEnabled(false);
         actionQuit = new QAction(TranslatorClass);
         actionQuit->setObjectName(QStringLiteral("actionQuit"));
+        actionProjectFile = new QAction(TranslatorClass);
+        actionProjectFile->setObjectName(QStringLiteral("actionProjectFile"));
+        actionProjectFile->setCheckable(true);
+        actionProjectFile->setChecked(true);
         centralWidget = new QWidget(TranslatorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         TranslatorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(TranslatorClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 23));
+        menuBar->setGeometry(QRect(0, 0, 843, 23));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menu_Edit = new QMenu(menuBar);
@@ -100,6 +109,12 @@ public:
         statusBar = new QStatusBar(TranslatorClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         TranslatorClass->setStatusBar(statusBar);
+        dockProjFile = new QDockWidget(TranslatorClass);
+        dockProjFile->setObjectName(QStringLiteral("dockProjFile"));
+        projFileWidget = new ProjFileWidget();
+        projFileWidget->setObjectName(QStringLiteral("projFileWidget"));
+        dockProjFile->setWidget(projFileWidget);
+        TranslatorClass->addDockWidget(static_cast<Qt::DockWidgetArea>(1), dockProjFile);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menu_Edit->menuAction());
@@ -118,6 +133,7 @@ public:
         menuFile->addAction(actionReleaseAll);
         menuFile->addSeparator();
         menuFile->addAction(actionQuit);
+        menu_View->addAction(actionProjectFile);
         menu_Option->addAction(actionSetting);
 
         retranslateUi(TranslatorClass);
@@ -142,10 +158,12 @@ public:
         actionReleaseAll->setText(QApplication::translate("TranslatorClass", "Release All", 0));
         actionSetting->setText(QApplication::translate("TranslatorClass", "Project Setting", 0));
         actionQuit->setText(QApplication::translate("TranslatorClass", "Quit", 0));
+        actionProjectFile->setText(QApplication::translate("TranslatorClass", "Project File", 0));
         menuFile->setTitle(QApplication::translate("TranslatorClass", "&Project", 0));
         menu_Edit->setTitle(QApplication::translate("TranslatorClass", "&Edit", 0));
         menu_View->setTitle(QApplication::translate("TranslatorClass", "&View", 0));
         menu_Option->setTitle(QApplication::translate("TranslatorClass", "&Option", 0));
+        dockProjFile->setWindowTitle(QApplication::translate("TranslatorClass", "Project File", 0));
     } // retranslateUi
 
 };

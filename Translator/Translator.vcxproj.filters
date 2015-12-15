@@ -97,6 +97,24 @@
     <ClCompile Include="io\ProjectIOAdapter.cpp">
       <Filter>io</Filter>
     </ClCompile>
+    <ClCompile Include="core\TransFile.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="filter\TextFilter.cpp">
+      <Filter>filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter\FileFilterBase.cpp">
+      <Filter>filter</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_projfilewidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_projfilewidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\projfilewidget.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="translator.qrc">
@@ -118,6 +136,12 @@
       <Filter>dialog</Filter>
     </CustomBuild>
     <CustomBuild Include="dialog\newprojectdlg.h">
+      <Filter>dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog\projfilewidget.ui">
+      <Filter>dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog\projfilewidget.h">
       <Filter>dialog</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -149,6 +173,18 @@
     </ClInclude>
     <ClInclude Include="io\ProjectIOAdapter.h">
       <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="filter\FileFilterBase.h">
+      <Filter>filter</Filter>
+    </ClInclude>
+    <ClInclude Include="core\TransFile.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="filter\TextFilter.h">
+      <Filter>filter</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_projfilewidget.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

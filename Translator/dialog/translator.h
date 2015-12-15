@@ -17,11 +17,15 @@ private:
 	void initMenu();
 	void onProjectLoaded();
 
+signals:
+	void projectLoaded();
+
 private slots:
 	void updateProjectMenu();
 
 	void onActionNew();
 	void onActionOpen();
+	void onActProjectFileView(bool bVisible);
 
 private:
 	Ui::TranslatorClass ui;

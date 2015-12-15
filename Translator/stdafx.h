@@ -13,3 +13,6 @@
 #define QSTR_Err_MkPathFailed QObject::tr("Make path \"%1\" failed!")
 #define QSTR_Ask_FileExist QObject::tr("File \"%1\" always exist! Overwrite?")
 #define QSTR_ProjectExt QString(".trproj")
+
+class FileFilterBase;
+typedef std::shared_ptr<FileFilterBase> FilterPtr;

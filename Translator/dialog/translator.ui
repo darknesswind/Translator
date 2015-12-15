@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>843</width>
+    <height>494</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>843</width>
      <height>23</height>
     </rect>
    </property>
@@ -50,6 +50,7 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
+    <addaction name="actionProjectFile"/>
    </widget>
    <widget class="QMenu" name="menu_Option">
     <property name="title">
@@ -71,6 +72,15 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockProjFile">
+   <property name="windowTitle">
+    <string>Project File</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="ProjFileWidget" name="projFileWidget"/>
+  </widget>
   <action name="actionNew">
    <property name="text">
     <string>&amp;New Project</string>
@@ -153,8 +163,27 @@
     <string>Quit</string>
    </property>
   </action>
+  <action name="actionProjectFile">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Project File</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ProjFileWidget</class>
+   <extends>QWidget</extends>
+   <header>projfilewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../translator.qrc"/>
  </resources>
